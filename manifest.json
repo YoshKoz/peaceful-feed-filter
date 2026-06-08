@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Peaceful Feed",
+  "version": "1.0",
+  "description": "Dims heavy/sad/grief content in social media feeds. Hover to read.",
+  "icons": {
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.linkedin.com/*",
+        "*://*.twitter.com/*",
+        "*://*.x.com/*",
+        "*://*.facebook.com/*",
+        "*://*.instagram.com/*",
+        "*://*.reddit.com/*",
+        "*://*.youtube.com/*",
+        "*://*.tiktok.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": ["storage"],
+  "host_permissions": [
+    "*://*.linkedin.com/*",
+    "*://*.twitter.com/*",
+    "*://*.x.com/*",
+    "*://*.facebook.com/*",
+    "*://*.instagram.com/*",
+    "*://*.reddit.com/*",
+    "*://*.youtube.com/*",
+    "*://*.tiktok.com/*"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  }
+}
